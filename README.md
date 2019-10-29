@@ -1,2 +1,1 @@
-# ToyApp
-# ToyApp
+# This is the first rails project 
