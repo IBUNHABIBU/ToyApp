@@ -1,12 +1,11 @@
-# <%= link_to("<< Back to list", {:action=>'index'},:class => 'back-link')%>
-<%= link_to 'Back', articles %>
-<div class="article delete">
-    <h2>Delete articles</h2>
-<%= form_for(:Subject, :url => {:action => 'delete'}) do |f| %>
-    <p>Are you sure you want to permanently delete this subject?</p>
-    <p class="reference-name"><%= @articles.name %></p>
-    <div class="form-button">
-        <%= submit_tag("Delete article") %>
-    </di>
-<%end>
+<div class="articles delete">
+<h2>Delete articles</h2>
+    <%= form_for @article, html: {method: :delete} do |f| %>
+        <h2>Are you sure you want to delete this post?</h2>
+        <p>
+        <%= f.submit "Delete" %> 
+        or 
+        <%= link_to "cancel", articles_path %>
+        </p>
+    <% end %>
 </div>
